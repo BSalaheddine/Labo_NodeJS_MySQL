@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Todo</h1>
+    <h2>Liste des tâches</h2>
+    <ul>
+        <% for(let i = 0; i < todot.length; i++) { %>
+            <li>
+                <%= todot[i].tache %>
+                <a href="/delete/<%= todot[i].id %> ">Effacer</a> 
+            </li>
+        <% } %>
+    </ul>
+    <form method= 'post' action="/">
+        <h2>Ajouter une tâche</h2>
+        <p><%= msg %> </p>
+        <input type="text" name="tache">
+        <button type="submit">Sauver</button>
+    </form>
+</body>
+</html>
